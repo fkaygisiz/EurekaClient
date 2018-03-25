@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: fatihEurekaTestApp
+eureka:
+  client:
+    serviceUrl:
+      defaulZone: http://127.0.0.1:8761/eureka/
+      
+---   
+spring:
+  profiles: cloud
+eureka:
+  instance:
+    nonSecurePort: 80
+    hostname: ${vcap.application.uris[0]}
+  client:
+    service-url:
+      defaultZone: https://fatih-eureka1.run.aws-usw02-pr.ice.predix.io/eureka/
